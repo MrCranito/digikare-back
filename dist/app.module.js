@@ -8,13 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
+const config_1 = require("@nestjs/config");
+const typeorm_1 = require("@nestjs/typeorm");
+const users_module_1 = require("./modules/users/users.module");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
+const env_helper_1 = require("./common/helper/env.helper");
+const typeorm_service_1 = require("./shared/typeorm/typeorm.service");
+const events_module_1 = require("./modules/events/events.module");
+const envFilePath = (0, env_helper_1.getEnvPath)(`${__dirname}/common/envs`);
 let AppModule = exports.AppModule = class AppModule {
 };
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
+        imports: [
+            config_1.ConfigModule.forRoot({ envFilePath, isGlobal: true }),
+            typeorm_1.TypeOrmModule.forRootAsync({ useClass: typeorm_service_1.TypeOrmConfigService }),
+            users_module_1.UsersModule,
+            events_module_1.EventsModule
+        ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

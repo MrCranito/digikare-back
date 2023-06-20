@@ -1,10 +1,19 @@
-import { Entity, Column } from 'typeorm';
+import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Event { 
-    @Column()
+    @PrimaryGeneratedColumn()
     id: string;
 
-    @Column()
-    enabled: boolean;
+    @Column({type: 'jsonb'})
+    public user;
+
+    @Column({type: 'jsonb', nullable: true, default: {}})
+    public consents;
+
+    @Column({ type: 'text' })
+    public createdAt: String;
+
+    @Column({ type: 'text' })
+    public updatedAt: String;
 }

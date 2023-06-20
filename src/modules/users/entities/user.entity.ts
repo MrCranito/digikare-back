@@ -8,8 +8,8 @@ export class User {
   id: number;
 
   @Column()
-  email: string;
+  public email: string;
 
-  @Column()
-  consent: Event[];
+  @Column({type: 'jsonb', nullable: true, default: {}})
+  public consents: Event[] = [];
 }
