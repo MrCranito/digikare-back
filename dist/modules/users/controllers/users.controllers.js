@@ -21,7 +21,7 @@ let UsersController = exports.UsersController = class UsersController {
         this.usersService = usersService;
     }
     get(params) {
-        return this.usersService.getUser(params.id);
+        return this.usersService.getUser(params.email);
     }
     create(body) {
         return this.usersService.createUser(body);
@@ -31,7 +31,7 @@ let UsersController = exports.UsersController = class UsersController {
     }
 };
 __decorate([
-    (0, common_1.Get)(':id'),
+    (0, common_1.Get)(':email'),
     __param(0, (0, common_1.Param)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),

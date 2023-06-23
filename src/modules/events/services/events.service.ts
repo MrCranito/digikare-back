@@ -10,6 +10,7 @@ export class EventsService {
 
    @InjectRepository(Event)
    private readonly repositoryEvent: Repository<Event>;
+   @InjectRepository(User)
    private readonly repositoryUser: Repository<User>;
 
     createEvent(body: CreateEventDto): Promise<Event> { 

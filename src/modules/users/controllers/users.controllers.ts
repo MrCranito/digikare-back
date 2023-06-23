@@ -8,9 +8,9 @@ import { CreateUserDto } from '../dto/user.dto';
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
-  @Get(':id')
+  @Get(':email')
   get(@Param() params: any): Promise<User> {
-    return this.usersService.getUser(params.id);
+    return this.usersService.getUser(params.email);
   }
 
   @Post()

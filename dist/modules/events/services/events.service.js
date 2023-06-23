@@ -14,6 +14,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const event_entity_1 = require("../entities/event.entity");
+const user_entity_1 = require("../../users/entities/user.entity");
 let EventsService = exports.EventsService = class EventsService {
     createEvent(body) {
         const event = new event_entity_1.Event();
@@ -36,6 +37,10 @@ __decorate([
     (0, typeorm_1.InjectRepository)(event_entity_1.Event),
     __metadata("design:type", typeorm_2.Repository)
 ], EventsService.prototype, "repositoryEvent", void 0);
+__decorate([
+    (0, typeorm_1.InjectRepository)(user_entity_1.User),
+    __metadata("design:type", typeorm_2.Repository)
+], EventsService.prototype, "repositoryUser", void 0);
 exports.EventsService = EventsService = __decorate([
     (0, common_1.Injectable)()
 ], EventsService);

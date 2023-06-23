@@ -16,15 +16,31 @@ const typeorm_2 = require("typeorm");
 const user_entity_1 = require("../entities/user.entity");
 let UsersService = exports.UsersService = class UsersService {
     constructor() { }
-    getUser(id) {
-        return this.repository.findOneBy({ id });
+    async getUser(email) {
+        await this.repository.findOne({ where: { email } }).then((user) => {
+            if (!user) {
+                throw new common_1.HttpException({
+                    status: common_1.HttpStatus.NOT_FOUND,
+                    error: "L'utilisateur n'existe pas",
+                }, common_1.HttpStatus.NOT_FOUND);
+            }
+        });
+        return this.repository.findOne({ where: { email } });
     }
     removeUser(id) {
         return this.repository.delete(id);
     }
-    createUser(body) {
+    async createUser(body) {
         const user = new user_entity_1.User();
         user.email = body.email;
+        await this.repository.findOne({ where: { email: body.email } }).then((user) => {
+            if (user) {
+                throw new common_1.HttpException({
+                    status: common_1.HttpStatus.UNPROCESSABLE_ENTITY,
+                    error: "L'utilisateur existe déjà",
+                }, common_1.HttpStatus.UNPROCESSABLE_ENTITY);
+            }
+        });
         return this.repository.save(user);
     }
 };
