@@ -50,13 +50,9 @@ This is an example of how to list things you need to use the software and how to
 ## Launch
 <pre
   <code>
-  <a href="http://localhost:4200/"> <button>  Launch App  </button></a>
+  <a href="http://localhost:4200/">Link to the App</a>
   </code>
-
 </pre>
-```js
-Go to [`My LocalHost`](http://localhost:4200/)
-```
 
 ### Any Questions?
 
