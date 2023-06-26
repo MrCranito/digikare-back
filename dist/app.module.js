@@ -11,8 +11,6 @@ const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
 const users_module_1 = require("./modules/users/users.module");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
 const env_helper_1 = require("./common/helper/env.helper");
 const typeorm_service_1 = require("./shared/typeorm/typeorm.service");
 const events_module_1 = require("./modules/events/events.module");
@@ -27,8 +25,8 @@ exports.AppModule = AppModule = __decorate([
             users_module_1.UsersModule,
             events_module_1.EventsModule
         ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [],
+        providers: [],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
