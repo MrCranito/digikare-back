@@ -62,7 +62,7 @@ This is an example of how to list things you need to use the software and how to
 
 [Mail.Me]: https://img.shields.io/badge/Mail.me-000000?style=for-the-badge&logo=gmail&logoColor=white
 [Mail-url]: mailto:victor.moreau.31@gmail.com?subject=digikare
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
+[Nest.js]: https://img.shields.io/badge/nest.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Nest-url]: https://nextjs.org/
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
