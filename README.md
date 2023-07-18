@@ -10,7 +10,7 @@
 
 ### Infrastructure
 
-- [![Next][Next.js]][Next-url]
+- [![Nest][Nest.js]][Nest-url]
 - [![Angular][Angular.io]][Angular-url]
 
 <!-- GETTING STARTED -->
